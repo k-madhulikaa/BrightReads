@@ -1,13 +1,3 @@
-/* script.js
-   Handles:
-   - Cart (localStorage) across pages
-   - Cart add/remove/clear
-   - Update header cart counts
-   - Download cart as txt
-   - Reviews saved to localStorage
-*/
-
-// ---------- Utilities ----------
 function $id(id){ return document.getElementById(id); }
 function saveCartToStorage(cart){ localStorage.setItem('brightreads_cart', JSON.stringify(cart)); }
 function loadCartFromStorage(){ return JSON.parse(localStorage.getItem('brightreads_cart') || '[]'); }
