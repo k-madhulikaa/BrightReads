@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BrightReads — Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">BrightReads</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="cart.html" class="active">Cart</a>
+      <a href="review.html">Reviews</a>
+    </nav>
+  </header>
+
+  <main class="cart-page">
+    <h1>Your Cart</h1>
+    <div id="cart-list" class="cart-list">Loading cart...</div>
+
+    <div class="cart-controls">
+      <div class="total" id="cart-total">Total: ₹0</div>
+      <div class="cart-buttons">
+        <button onclick="clearCart()" class="btn danger">Clear Cart</button>
+        <button onclick="downloadCart()" class="btn primary">Download Cart (.txt)</button>
+        <button onclick="checkout()" class="btn primary">Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year-cart"></span> BrightReads
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

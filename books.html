@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightReads — Books</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">BrightReads</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="books.html" class="active">Books</a>
+    <a href="cart.html">Cart <span id="cart-count-books" class="count">0</span></a>
+    <a href="review.html">Reviews</a>
+  </nav>
+</header>
+
+<main class="books-page">
+
+  <h1>Our Books Collection</h1>
+
+  <!-- CATEGORY SELECT FILTER -->
+  <label class="filter-label">
+    <strong>Choose Book Type:</strong>
+    <select id="categorySelect" onchange="filterBooks()">
+      <option value="all">All Books</option>
+      <option value="fiction">Fiction</option>
+      <option value="kids">Kids</option>
+      <option value="academic">Academic</option>
+      <option value="selfhelp">Self-help</option>
+      <option value="comics">Comics</option>
+    </select>
+  </label>
+
+  <!-- BOOKS GRID -->
+  <div id="booksContainer" class="grid">
+
+    <!-- Fiction -->
+    <div class="card" data-category="fiction">
+      <img src="images/harrypotter.jpg" alt="">
+      <h3>Harry Potter</h3>
+      <p>₹550</p>
+      <button onclick="addToCart('Harry Potter',550)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="fiction">
+      <img src="images/alchemist.jpg" alt="">
+      <h3>The Alchemist</h3>
+      <p>₹300</p>
+      <button onclick="addToCart('The Alchemist',300)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="fiction">
+      <img src="images/gatsby.jpg" alt="">
+      <h3>The Great Gatsby</h3>
+      <p>₹350</p>
+      <button onclick="addToCart('The Great Gatsby',350)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="fiction">
+      <img src="images/hobbit.jpg" alt="">
+      <h3>The Hobbit</h3>
+      <p>₹450</p>
+      <button onclick="addToCart('The Hobbit',450)">Add to Cart</button>
+    </div>
+
+    <!-- Kids -->
+    <div class="card" data-category="kids">
+      <img src="images/jungle_book.jpg" alt="">
+      <h3>The Jungle Book</h3>
+      <p>₹200</p>
+      <button onclick="addToCart('The Jungle Book',200)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="kids">
+      <img src="images/diary_of_wimpy_kid.jpg" alt="">
+      <h3>Diary of a Wimpy Kid</h3>
+      <p>₹250</p>
+      <button onclick="addToCart('Diary of a Wimpy Kid',250)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="kids">
+      <img src="images/charli.jpg" alt="">
+      <h3>Charlie & The Chocolate Factory</h3>
+      <p>₹280</p>
+      <button onclick="addToCart('Charlie & The Chocolate Factory',280)">Add to Cart</button>
+    </div>
+
+    <!-- Academic -->
+    <div class="card" data-category="academic">
+      <img src="images/academic_giants.jpg" alt="">
+      <h3>Academic Gaints</h3>
+      <p>₹450</p>
+      <button onclick="addToCart('Academic Gaints',450)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="academic">
+      <img src="images/hand_of_science.jpg" alt="">
+      <h3>Hand of Science</h3>
+      <p>₹500</p>
+      <button onclick="addToCart('Hand of Science',500)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="academic">
+      <img src="images/math_you_missed.jpg" alt="">
+      <h3>All the Math you Missed</h3>
+      <p>₹350</p>
+      <button onclick="addToCart('All the Math you Missed',350)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="academic">
+      <img src="images/the_arts.jpg" alt="">
+      <h3>The Arts</h3>
+      <p>₹400</p>
+      <button onclick="addToCart('The Arts',400)">Add to Cart</button>
+    </div>
+
+    <!-- Self-help -->
+    <div class="card" data-category="selfhelp">
+      <img src="images/atomic_habits.jpg" alt="">
+      <h3>Atomic Habits</h3>
+      <p>₹499</p>
+      <button onclick="addToCart('Atomic Habits',499)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="selfhelp">
+      <img src="images/think_rich_and_grow_rich.jpg" alt="">
+      <h3>Think and Grow Rich</h3>
+      <p>₹299</p>
+      <button onclick="addToCart('Think and Grow Rich',299)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="comics">
+      <img src="images/fire_of_wings.jpg" alt="">
+      <h3>Fire of Wings</h3>
+      <p>₹250</p>
+      <button onclick="addToCart('Fire of Wings',250)">Add to Cart</button>
+    </div>
+
+    <!-- Comics -->
+    <div class="card" data-category="comics">
+      <img src="images/avengers.jpg" alt="">
+      <h3>Avengers Comic</h3>
+      <p>₹350</p>
+      <button onclick="addToCart('Avengers Comic',350)">Add to Cart</button>
+    </div>
+
+  </div>  
+</main>
+
+<footer>
+  © <span id="year"></span> BrightReads
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+function filterBooks() {
+  let category = document.getElementById("categorySelect").value;
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.style.display = (category === "all" || card.dataset.category === category) 
+      ? "block" : "none";
+  });
+}
+</script>
+
+</body>
+</html>

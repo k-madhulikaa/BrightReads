@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BrightReads — Reviews</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">BrightReads</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="cart.html">Cart <span id="cart-count-review" class="count">0</span></a>
+      <a href="review.html" class="active">Reviews</a>
+    </nav>
+  </header>
+
+  <main class="review-page">
+    <h1>Customer Reviews</h1>
+
+    <form id="review-form" onsubmit="submitReview(event)">
+      <label>
+        Name
+        <input type="text" id="rev-name" required />
+      </label>
+      <label>
+        Rating
+        <select id="rev-rating" required>
+          <option value="">Select</option>
+          <option>5</option>
+          <option>4</option>
+          <option>3</option>
+          <option>2</option>
+          <option>1</option>
+        </select>
+      </label>
+      <label>
+        Review
+        <textarea id="rev-text" rows="4" required></textarea>
+      </label>
+      <button class="btn primary" type="submit">Submit Review</button>
+    </form>
+
+    <section>
+      <h2>All Reviews</h2>
+      <div id="reviews-list">No reviews yet.</div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year-review"></span> BrightReads
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
