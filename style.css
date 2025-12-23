@@ -8,6 +8,7 @@
 }
 
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -16,6 +17,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
+/*NAVBAR  */
 .nav{
   display:flex;
   justify-content:space-between;
@@ -29,6 +31,7 @@ body{
   box-shadow:0 2px 8px rgba(2,6,23,0.08);
 }
 .brand{font-weight:700;font-size:20px}
+
 .nav nav a{
   color:white;
   text-decoration:none;
@@ -37,10 +40,12 @@ body{
   padding:6px 10px;
   border-radius:6px;
 }
-.nav nav a.active, .nav nav a:hover{
+
+.nav nav a.active,
+.nav nav a:hover{
   background: rgba(255,255,255,0.12);
-  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.05);
 }
+
 .count{
   background:#ff5a5f;
   padding:2px 7px;
@@ -49,7 +54,6 @@ body{
   margin-left:6px;
 }
 
-/* Hero */
 .hero{
   display:flex;
   gap:20px;
@@ -59,68 +63,190 @@ body{
   margin:24px auto;
   background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
   border-radius: var(--radius);
-  overflow:hidden;
   box-shadow:0 8px 30px rgba(15,32,64,0.06);
 }
-.hero-content{flex:1;padding:20px}
-.hero-image img{width:520px;max-width:100%;border-radius:10px;object-fit:cover}
+
+.hero-content{flex:1}
+.hero-image img{
+  width:520px;
+  max-width:100%;
+  border-radius:10px;
+  object-fit:cover
+}
+
 .hero h1{margin:0;font-size:34px}
 .hero p{color:var(--muted);margin:10px 0 20px}
-.btn{border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
-.btn.primary{background:var(--primary);color:#fff}
-.btn.primary:hover{background:var(--primary-dark)}
-.btn.ghost{background:transparent;border:1px solid #e6e9ef;color:var(--muted)}
 
-/* Featured & cards */
-.featured{max-width:1200px;margin:18px auto;padding:0 24px}
-.cards{display:flex;gap:14px}
-.card-small{background:var(--card);padding:12px;border-radius:10px;width:200px;box-shadow:0 6px 20px rgba(25,39,72,0.04);text-align:center}
-.card-small img{width:100%;height:140px;object-fit:cover;border-radius:6px}
-.card-small h3{margin:8px 0 6px;font-size:16px}
-.card-small p{margin:0;color:var(--muted)}
-.card-small button{margin-top:8px;padding:8px 12px;border-radius:8px;border:0;background:var(--primary);color:#fff}
+/* BUTTONS */
+.btn{
+  border:0;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer
+}
 
-/* Layout for books page */
-.books-page, .cart-page, .review-page{max-width:1200px;margin:18px auto;padding:0 24px}
+.btn.primary{
+  background:var(--primary);
+  color:#fff
+}
+
+.btn.primary:hover{
+  background:var(--primary-dark)
+}
+
+.featured{
+  max-width:1200px;
+  margin:18px auto;
+  padding:0 24px
+}
+
+.cards{
+  display:flex;
+  gap:14px
+}
+
+.card-small{
+  background:var(--card);
+  padding:12px;
+  border-radius:10px;
+  width:200px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(25,39,72,0.04)
+}
+
+.card-small img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:6px
+}
+
+/* PAGES */
+.books-page,
+.cart-page,
+.review-page{
+  max-width:1200px;
+  margin:18px auto;
+  padding:0 24px
+}
+
 h1{font-size:28px;margin:6px 0 18px}
-h2{font-size:20px;margin:18px 0 10px;color:#1f2937;border-left:4px solid var(--primary);padding-left:10px}
+h2{
+  font-size:20px;
+  margin:18px 0 10px;
+  border-left:4px solid var(--primary);
+  padding-left:10px
+}
 
-/* grid of book cards */
-.grid{display:flex;flex-wrap:wrap;gap:18px}
-.card{background:var(--card);width:230px;border-radius:12px;padding:12px;box-shadow:0 8px 24px rgba(12,20,46,0.04)}
-.card img{width:100%;height:270px;object-fit:cover;border-radius:8px}
-.card h3{margin:8px 0 4px;font-size:16px}
-.author{color:var(--muted);font-size:13px;margin:0}
-.price{font-weight:700;margin-top:8px}
-.card-actions{display:flex;gap:8px;margin-top:10px}
-.card-actions button{flex:1;padding:8px;border-radius:8px;border:0;cursor:pointer}
-.card-actions button:first-child{background:var(--primary);color:#fff}
-.card-actions button:last-child{background:#eef2ff;color:var(--primary)}
+/* BOOK GRID */
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px
+}
 
-/* layout for main home area with sidebar cart (used on some pages) */
-.layout{display:grid;grid-template-columns:1fr 360px;gap:22px;padding:0 24px;max-width:1200px;margin:0 auto}
-.cart-box{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(12,20,46,0.04)}
-.cart-list{min-height:140px}
-.cart-list .item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eef2f6}
-.cart-list .item:last-child{border-bottom:0}
+.card{
+  background:var(--card);
+  width:230px;
+  border-radius:12px;
+  padding:12px;
+  box-shadow:0 8px 24px rgba(12,20,46,0.04)
+}
 
-/* cart page */
-.cart-page .cart-list{background:var(--card);padding:12px;border-radius:10px}
-.cart-controls{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
-.cart-buttons button{margin-left:8px}
-.total{font-weight:700;font-size:18px}
+.card img{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  border-radius:8px
+}
 
-/* review form */
-form label{display:block;margin:10px 0}
-input[type="text"], select, textarea{width:100%;padding:8px;border-radius:8px;border:1px solid #e6eef7}
-.review-page form{max-width:720px;background:var(--card);padding:14px;border-radius:10px;box-shadow:0 8px 24px rgba(12,20,46,0.04)}
+/* CART */
+.cart-page .cart-list{
+  background:var(--card);
+  padding:12px;
+  border-radius:10px
+}
 
-footer{margin:26px 0;text-align:center;color:#6b7280}
+.cart-controls{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:12px
+}
 
-/* responsive */
+.total{
+  font-weight:700;
+  font-size:18px
+}
+
+/* REVIEW FORM */
+.review-page form{
+  max-width:720px;
+  background:var(--card);
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(12,20,46,0.04)
+}
+
+form label{
+  display:block;
+  margin:14px 0;
+  font-weight:500
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #e6eef7
+}
+
+/* LIVE BILL */
+.bill-box{
+  background:var(--card);
+  padding:16px;
+  margin-top:16px;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(12,20,46,0.04)
+}
+
+.bill-box h3{
+  margin-top:0;
+  font-size:20px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:6px
+}
+
+.bill-row{
+  display:flex;
+  justify-content:space-between;
+  margin:6px 0
+}
+
+.bill-total{
+  margin-top:12px;
+  font-weight:bold;
+  font-size:18px
+}
+
+/* FOOTER */
+footer{
+  margin:26px 0;
+  text-align:center;
+  color:#6b7280
+}
+
 @media (max-width:920px){
-  .layout{grid-template-columns:1fr}
-  .hero{flex-direction:column;align-items:flex-start}
-  .hero-image img{width:100%}
-  .grid{justify-content:center}
+  .hero{
+    flex-direction:column
+  }
+  .hero-image img{
+    width:100%
+  }
+  .grid{
+    justify-content:center
+  }
 }

@@ -18,18 +18,20 @@
   </header>
 
   <main class="cart-page">
-    <h1>Your Cart</h1>
-    <div id="cart-list" class="cart-list">Loading cart...</div>
+  <h1>Your Cart</h1>
 
-    <div class="cart-controls">
-      <div class="total" id="cart-total">Total: ₹0</div>
-      <div class="cart-buttons">
-        <button onclick="clearCart()" class="btn danger">Clear Cart</button>
-        <button onclick="downloadCart()" class="btn primary">Download Cart (.txt)</button>
-        <button onclick="checkout()" class="btn primary">Checkout</button>
-      </div>
+  <div id="cart-list" class="cart-list">Loading cart...</div>
+  <div id="bill-section" class="bill-box"></div>
+
+  <div class="cart-controls">
+    <div class="total" id="cart-total">Total: ₹0</div>
+    <div class="cart-buttons">
+      <button onclick="clearCart()" class="btn danger">Clear Cart</button>
+      <button onclick="checkout()" class="btn primary">Checkout</button>
     </div>
-  </main>
+  </div>
+</main>
+
 
   <footer>
     © BrightReads
